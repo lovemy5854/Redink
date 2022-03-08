@@ -1,24 +1,14 @@
-import React from 'react';
-import './App.css';
+import React, { FC } from 'react';
 
-const App = () => {
+const App: FC<{ Component: any; pageProps: any }> = ({
+  Component,
+  pageProps,
+}) => {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/_App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Component {...pageProps} />
     </div>
   );
-}
+};
 
 export default App;
