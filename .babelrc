@@ -9,6 +9,5 @@
         }
       }
     ]
-  ],
-  "plugins": ["next/babel","@emotion/babel-plugin", "@emotion/babel-preset-css-prop"]
+  ]
 }
