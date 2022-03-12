@@ -1,37 +1,37 @@
 export const SideRoute = [
   {
     name: '대시보드',
-    href: '',
+    href: '/',
     active: true,
   },
   {
     name: '현장관리',
-    href: '',
+    href: '/a',
     active: false,
   },
   {
     name: '계약대장',
-    href: '',
+    href: '/b',
     active: false,
   },
   {
     name: '현황 리포트',
-    href: '',
+    href: '/c',
     active: false,
   },
   {
     name: '분양정보 및 가격',
-    href: '',
+    href: '/d',
     active: false,
   },
   {
     name: '세금계산서발행',
-    href: '',
+    href: '/f',
     active: false,
   },
   {
     name: '설정',
-    href: '',
+    href: '/g',
     active: false,
   },
 ];

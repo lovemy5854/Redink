@@ -8,7 +8,10 @@
     "forceConsistentCasingInFileNames": false,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": ["dom", "es2017"],
+    "lib": [
+      "dom",
+      "es2017"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -17,17 +20,25 @@
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ]
     },
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "incremental": true
   },
   "exclude": [
     "node_modules",
     "components/**/*.stories.tsx",
     "components/**/*.stories.mdx"
   ],
-  "files": ["twin.d.ts"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "files": [
+    "twin.d.ts"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }

@@ -14,6 +14,13 @@ const GlobalStyle = css`
   body > div {
     height: 100%;
   }
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+  }
 `;
 
 const App: FC<{ Component: any; pageProps: any }> = ({

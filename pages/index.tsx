@@ -19,7 +19,7 @@ const Header = styled.div`
 const ContentWrap = styled.div`
   display: flex;
   flex-direction: row;
-  flex: 1 1 auto;
+  flex: 0 0 calc(100% - 56px);
 `;
 
 const ContentsBox = styled.div`
@@ -27,7 +27,7 @@ const ContentsBox = styled.div`
 `;
 
 const SideToggleBar = styled.button`
-  position: relative;
+  position: absolute;
   bottom: 32px;
   left: 0;
   width: 56px;
