@@ -22,7 +22,7 @@
     "paths": {
       "@/*": [
         "./*"
-      ]
+      ],
     },
     "skipLibCheck": true,
     "strict": true,

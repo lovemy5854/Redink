@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
-import { SideRoute } from '../../constants/SideBar/sidebar';
+import { SideRoute } from '@/constants/SideBar/sidebar';
 
 import Link from 'next/link';
 import styled from '@emotion/styled';
@@ -10,6 +11,7 @@ interface SideListProps {
   name?: string;
   active: boolean;
   href: string;
+  line?: boolean;
 }
 
 const SideBarContent = styled.ul`
@@ -19,7 +21,9 @@ const SideBarContent = styled.ul`
 `;
 
 const SideList = styled.a`
-  display: block;
+  position: relative;
+  display: flex;
+  align-items: center;
   padding: 16px 17px;
   color: #fff;
   font-weight: 300;
@@ -29,6 +33,24 @@ const SideList = styled.a`
   &:hover {
     background: #444b55;
   }
+
+  ${(props: any) =>
+    props.line &&
+    `&:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left:16px;
+    right:16px;
+    height: 1px;
+    background: #595F68;
+  }`};
+`;
+
+const SideText = styled.span`
+  display: block;
+  margin-top: 8px;
+  padding-left: 10px;
 `;
 
 const SideBar: React.FC<any> = () => {
@@ -39,6 +61,7 @@ const SideBar: React.FC<any> = () => {
   useEffect(() => {
     console.log(route.pathname);
     console.log(sideRoute);
+    console.log(setSideRoute);
   }, [route.query]);
 
   return (
@@ -47,8 +70,13 @@ const SideBar: React.FC<any> = () => {
         {sideRoute.map((route, idx) => {
           return (
             <Link key={route.name + idx} href={route.href} passHref={true}>
-              <SideList href={route.href} active={route.active}>
-                {route.name}
+              <SideList
+                href={route.href}
+                active={route.active}
+                line={sideRoute.length - 1 === idx}
+              >
+                <Image {...route.img} />
+                <SideText>{route.name}</SideText>
               </SideList>
             </Link>
           );
