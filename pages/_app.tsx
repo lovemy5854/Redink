@@ -15,11 +15,21 @@ const GlobalStyle = css`
     height: 100%;
   }
   ul {
-    padding: 0;
     margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+  }
+  h1 {
+    margin: 0;
+    padding: 0;
   }
   a {
     text-decoration: none;
+  }
+  img {
+    display: block;
   }
 `;
 

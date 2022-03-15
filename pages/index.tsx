@@ -1,5 +1,6 @@
 import React from 'react';
 
+import HeaderWrap from '@/components/Header/Header';
 import SideBar from '@/components/SideBar/SideBar';
 
 import styled from '@emotion/styled';
@@ -9,11 +10,6 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-`;
-
-const Header = styled.div`
-  display: flex;
-  flex: 0 0 56px;
 `;
 
 const ContentWrap = styled.div`
@@ -40,7 +36,7 @@ const SideToggleBar = styled.button`
 const Main = () => {
   return (
     <Wrap>
-      <Header>111</Header>
+      <HeaderWrap />
       <ContentWrap>
         <SideBar />
         <ContentsBox>contents</ContentsBox>
