@@ -9,11 +9,15 @@ const Header = styled.div`
   flex: 0 0 56px;
 `;
 
-const HeaderListBox = styled.div`
+const HeaderListBox = styled.div<{ active: boolean }>`
   display: flex;
   align-items: center;
   flex: 0 0 220px;
-  background: #2a323e;
+  background: ${({ active }) => (active ? '#2a323e' : '#F7F8F9')};
+
+  & > button > span {
+    color: ${({ active }) => (active ? '#fff' : '#2A323E')};
+  }
 `;
 
 const HeaderRightBox = styled.div`
@@ -52,17 +56,23 @@ const SelectText = styled.span`
   cursor: pointer;
 `;
 
-const HeaderWrap = () => {
+const HeaderWrap = ({
+  onModal,
+  toggle,
+}: {
+  onModal?: () => void;
+  toggle: boolean;
+}) => {
   return (
     <Header>
-      <HeaderListBox>
-        <SelectBox>
+      <HeaderListBox active={toggle}>
+        <SelectBox onClick={onModal}>
           <SelectText>오몽 지식산업센터</SelectText>
         </SelectBox>
       </HeaderListBox>
       <HeaderRightBox>
         <h1>
-          <img {...logo} />
+          <img src={logo.src} />
         </h1>
         <MenuBox>
           <MenuItems>검색</MenuItems>

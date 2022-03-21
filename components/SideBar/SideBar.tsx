@@ -14,7 +14,8 @@ interface SideListProps {
   line?: boolean;
 }
 
-const SideBarContent = styled.ul`
+const SideBarContent = styled.ul<{ active: boolean }>`
+  display: ${({ active }) => (active ? 'block' : 'none')};
   flex: 0 0 220px;
   background: #2a323e;
   padding: 20px 0;
@@ -53,7 +54,7 @@ const SideText = styled.span`
   padding-left: 10px;
 `;
 
-const SideBar: React.FC<any> = () => {
+const SideBar: React.FC<any> = ({ toggle }) => {
   const route = useRouter();
 
   const [sideRoute, setSideRoute] = useState(SideRoute);
@@ -65,7 +66,7 @@ const SideBar: React.FC<any> = () => {
   }, [route.query]);
 
   return (
-    <SideBarContent>
+    <SideBarContent active={toggle}>
       <li>
         {sideRoute.map((route, idx) => {
           return (

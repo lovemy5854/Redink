@@ -21,7 +21,8 @@ const GlobalStyle = css`
   li {
     list-style: none;
   }
-  h1 {
+  h1,
+  p {
     margin: 0;
     padding: 0;
   }
@@ -30,6 +31,13 @@ const GlobalStyle = css`
   }
   img {
     display: block;
+  }
+  button {
+    background: none;
+    border: 0;
+  }
+  a {
+    color: #2a323e;
   }
 `;
 
